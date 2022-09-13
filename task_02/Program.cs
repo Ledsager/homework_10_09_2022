@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// В двумерном массиве целых чисел. Удалить строку и столбец, 
+// на пересечении которых расположен наименьший элемент.
+

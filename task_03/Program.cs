@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Сформировать трехмерный массив не повторяющимися двузначными числами показать его 
+// построчно на экран выводя индексы соответствующего элемента
+
+
