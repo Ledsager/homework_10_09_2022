@@ -49,33 +49,23 @@ int[,] DelPozitionMinElement(int[,] arrayA, int[] pozitionmin)// поиск ин
     int[,] delarrayindex = new int[arrayA.GetLength(0) - 1, arrayA.GetLength(1) - 1];
     for (int i = 0; i < arrayA.GetLength(0) - 1; i++)
     {
-        if (i != pozitionmin[0])
-        {
+        if (i < pozitionmin[0])
             for (int j = 0; j < arrayA.GetLength(1) - 1; j++)
             {
-                if (j != pozitionmin[1])
+                if (j < pozitionmin[1])
                     delarrayindex[i, j] = arrayA[i, j];
-                else    
-                    delarrayindex[i,j]=arrayA[i+1,j];
+                else
+                    delarrayindex[i, j] = arrayA[i, j + 1];
             }
-        }
         else
-        {
-            for (int j = 0,k=0; j < arrayA.GetLength(1) - 1; j++)
-            {
-                if (j != pozitionmin[1])
-                    delarrayindex[i, j] = arrayA[i+1, j];
-                //Console.WriteLine(min+" ",i+" ",j);
-                else    
-                    delarrayindex[i,j]=arrayA[i+1,j+1];
-            }
-            
-        }
+            for (int j = 0; j < arrayA.GetLength(1) - 1; j++)
+                if (j < pozitionmin[1])
+                    delarrayindex[i, j] = arrayA[i + 1, j];
+                else
+                    delarrayindex[i, j] = arrayA[i + 1, j + 1];
     }
     return delarrayindex;
 }
-
-
 int[,] InputMatrix() // Ввод матриц размерностью [x,y]
 {
     Console.WriteLine("ВВедите размерность матрицы matrix[x,y]");
@@ -97,4 +87,5 @@ int[,] arrayA = InputMatrix();
 
 int[] pozition = FindMinIndex(arrayA);
 Console.WriteLine($"позиция минимального элемента [{pozition[0] + 1},{pozition[1] + 1}]");
+Console.WriteLine($"Матрица после удаления строки и столбца где был минимальный элемент");
 PrintArray(DelPozitionMinElement(arrayA, pozition));
