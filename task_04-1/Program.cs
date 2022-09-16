@@ -4,7 +4,7 @@ int n = 5;
 int[,] matr = new int[n, n];
 const int cent = 3;
 
-void PascalTriangle()
+void PascalTriangle() // заполнение матрицы (треугольника Паскаля)
 {
     for (int i = 0; i < n; i++)
     {
