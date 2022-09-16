@@ -20,7 +20,7 @@ void PascalTriangle() // заполнение матрицы (треугольн
     }
 }
 
-void PrintArray()//вывод матрицы на экран
+void PrintArray()//вывод матрицы на экран с отступами
 {
     int shir = cent * n;
     for (int i = 0; i < n; i++)
